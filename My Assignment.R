@@ -165,3 +165,4 @@ lines(FaisalabadVtr, col = "green");
 lines(RawalpindiVtr, col = "black");
 lines(lahoreVtr, col = "purple");
 legend("topleft", legend=c("Karachi", "Islamabad", "Faisalabad", "Rawalpindi", "Lahore"), col=c("red", "blue", "green", "black", "purple"), lwd = 2);
+legend("top", legend=c("1: 0-5 Marla", "2: 5-10 Marla", "3: 10-15 Marla", "4: 15-20 Marla", "5: 1-5 Kanal"));
