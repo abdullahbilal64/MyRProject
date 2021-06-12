@@ -31,7 +31,7 @@ islamabadVtr = c(meanCostAreaData0_10_Islamabad, meanAreaData10_20_Islamabad, me
 
 
 
-#--------------------Lahore 
+#--------------------Lahore
 
 areaData = subset(data, data[20] == "0-5 Marla");
 areaData0_10_Islamabad = subset(areaData, areaData[7] == "Lahore");
@@ -157,7 +157,8 @@ meanAreaData1_5_Islamabad = mean(v5);
 KarachiVtr = c(meanCostAreaData0_10_Islamabad, meanAreaData10_20_Islamabad, meanAreaData10_15_Islamabad, meanAreaData15_20_Islamabad, meanAreaData1_5_Islamabad);
 
 options(scipen=5);
-plot(KarachiVtr, type = 'l', col = "red", ylim = c(0, 70000000), xlab = "Property size", ylab = "Prices in PKR");
+plot(KarachiVtr, type = 'l', col = "red", ylim = c(0, 70000000), xlab = "Property size", ylab = "Prices in PKR", xaxt = "n");
+axis(1, at = 1:5, labels = c("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"));
 # par(new = T);
 lines(islamabadVtr, col = "blue");par(new = T);
 # par(new = T);
@@ -165,4 +166,3 @@ lines(FaisalabadVtr, col = "green");
 lines(RawalpindiVtr, col = "black");
 lines(lahoreVtr, col = "purple");
 legend("topleft", legend=c("Karachi", "Islamabad", "Faisalabad", "Rawalpindi", "Lahore"), col=c("red", "blue", "green", "black", "purple"), lwd = 2);
-legend("top", legend=c("1: 0-5 Marla", "2: 5-10 Marla", "3: 10-15 Marla", "4: 15-20 Marla", "5: 1-5 Kanal"));
