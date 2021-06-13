@@ -156,8 +156,23 @@ meanAreaData1_5_Islamabad = mean(v5);
 
 KarachiVtr = c(meanCostAreaData0_10_Islamabad, meanAreaData10_20_Islamabad, meanAreaData10_15_Islamabad, meanAreaData15_20_Islamabad, meanAreaData1_5_Islamabad);
 
+# with Plotly
+library(plotly);
+
+p <- plot_ly()
+
+p <- add_trace(p, x = list("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"), y = KarachiVtr, mode = "lines", name = "Karachi")
+p <- add_trace(p, x = list("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"), y = islamabadVtr, mode = "lines", name = "Islamabad")
+p <- add_trace(p, x = list("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"), y = FaisalabadVtr, mode = "lines", name = "Faisalabad")
+p <- add_trace(p, x = list("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"), y = RawalpindiVtr, mode = "lines", name = "Rawalpindi")
+p <- add_trace(p, x = list("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"), y = lahoreVtr, mode = "lines", name = "Lahore")
+p;
+
+
+
+# without Plotly
 options(scipen=5);
-plot(KarachiVtr, type = 'l', col = "red", ylim = c(0, 70000000), xlab = "Property size", ylab = "Prices in PKR", xaxt = "n");
+plot(x = c(KarachiVtr, islamabadVtr, FaisalabadVtr, RawalpindiVtr, lahoreVtr), type = 'l', col = "red", ylim = c(0, 70000000), xlab = "Property size", ylab = "Prices in PKR", xaxt = "n");
 axis(1, at = 1:5, labels = c("0-5 Marla", "5-10 Marla", "10-15 Marla", "15-20 Marla", "1-5 Kanal"));
 # par(new = T);
 lines(islamabadVtr, col = "blue");par(new = T);
